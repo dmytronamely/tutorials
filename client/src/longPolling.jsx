@@ -26,13 +26,11 @@ function LongPolling() {
   }
 
   const onKeyUp = (event) => {
-    if (event.keyCode === 13) {
-      sendMessage()
-    }
+    if (event.keyCode === 13) sendMessage()
   }
 
   return (
-    <>
+    <div className='chat'>
       <div className='messages'>
         {
           messages.map(mess => {
@@ -54,7 +52,7 @@ function LongPolling() {
           type="text"
         />
       </div>
-    </>
+    </div>
   )
 }
 
