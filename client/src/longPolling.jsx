@@ -33,12 +33,11 @@ function LongPolling() {
     <div className='chat'>
       <div className='messages'>
         {
-          messages.map(mess => {
-            return (
+          messages.map(mess => (
               <div className='message' key={mess.id}>
                 { mess.message }
               </div>
-            )}
+            )
           )
         }
       </div>
