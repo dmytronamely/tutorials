@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
+import moment from 'moment'
+import { v4 as uuidv4 } from 'uuid'
 
 function LongPolling() {
   const inputRef = useRef() 
@@ -9,25 +11,23 @@ function LongPolling() {
     focus()
   }, [])
 
-  useEffect(() => {
-    console.log(messages);
-  }, [messages])
-
   const focus = () => inputRef.current?.focus()
-
+  
+  // INFO: updated every render
+  // Function, because need recalculate time every call it 
+  const message = () => ({
+    id: uuidv4(),
+    time: moment().format('HH:mm A'),
+    message: value,
+  })
+  
   const sendMessage = async () => {
-    const message = {
-      id: Date.now(),
-      message: value
-    }
-    
-    setMessages(prev => [...prev, message])
+    console.log(message())
+    setMessages(prev => [...prev, message()])
     setValue('')
   }
 
-  const onKeyUp = (event) => {
-    if (event.keyCode === 13) sendMessage()
-  }
+  const onKeyUp = (event) => { if (event.keyCode === 13) sendMessage() }
 
   return (
     <div className='chat'>

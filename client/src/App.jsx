@@ -1,5 +1,5 @@
-import './app.css'
-import LongPolling from './longPolling'
+import './app.scss'
+import LongPolling from './components/LongPolling'
 
 function App() {
   return (
