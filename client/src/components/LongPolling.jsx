@@ -11,8 +11,6 @@ function LongPolling() {
     focus()
   }, [])
 
-  const focus = () => inputRef.current?.focus()
-  
   // INFO: updated every render
   // Function, because need recalculate time every call it 
   const message = () => ({
@@ -22,11 +20,12 @@ function LongPolling() {
   })
   
   const sendMessage = async () => {
-    console.log(message())
+    // console.log(message())
     setMessages(prev => [...prev, message()])
     setValue('')
   }
 
+  const focus = () => inputRef.current?.focus()
   const onKeyUp = (event) => { if (event.keyCode === 13) sendMessage() }
 
   return (
