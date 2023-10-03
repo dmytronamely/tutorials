@@ -24,6 +24,7 @@ app.get('/get-messages', (req, res) => {
 // Broadcaster
 app.post('/new-messages', (req, res) => {
   const message = req.body;
+  console.log('NEW:', message);
   // Send message to all listeners on 'newMessage'
   emitter.emit('newMessage', message);
   res.status(200).end();
