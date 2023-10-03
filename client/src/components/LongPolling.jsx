@@ -10,7 +10,7 @@ function LongPolling() {
   useEffect(() => {
     focus()
   }, [])
-
+  
   // INFO: updated every render
   // Function, because need recalculate time every call it 
   const message = () => ({
