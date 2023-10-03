@@ -1,4 +1,4 @@
-import './app.scss'
+import './assets/style/app.scss'
 import LongPolling from './components/LongPolling'
 
 function App() {
