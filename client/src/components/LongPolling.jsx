@@ -20,7 +20,6 @@ function LongPolling() {
   })
   
   const sendMessage = async () => {
-    // console.log(message())
     setMessages(prev => [...prev, message()])
     setValue('')
   }
