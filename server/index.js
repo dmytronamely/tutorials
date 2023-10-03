@@ -1,3 +1,4 @@
+const PORT = 5001;
 const express = require('express');
 const cors = require('cors');
 const { EventEmitter } = require('events');
@@ -30,4 +31,4 @@ app.post('/new-messages', (req, res) => {
 })
 
 
-app.listen(5001, () => console.log('Server started on 5001 port'));
+app.listen(PORT, () => console.log(`Server started on ${PORT} port`));
