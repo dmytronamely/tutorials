@@ -1,7 +1,7 @@
 const PORT = 5003;
-const ws = require('ws');
+const { Server } = require('ws');
 
-const wss = new ws.Server({
+const wss = new Server({
   port: PORT
 }, () => {
   console.log(`Server startded on ${PORT} port...`)

@@ -6,7 +6,6 @@ import axios from 'axios'
 function EventSourcing() {
   const inputRef = useRef() 
   const messagesEndRef = useRef() 
-  const subscribeRef = useRef(null)
   const [value, setValue] = useState('')
   const [messages, setMessages] = useState([])
   const [subscribed, setSubscribed] = useState(false)
@@ -16,16 +15,9 @@ function EventSourcing() {
   useEffect(() => {
     subscribe()
     focus()
-    return  () => clearSubscriptionTimeout()
   }, [])
 
   useEffect(() => { scrollToBottom() }, [messages])
-
-  const clearSubscriptionTimeout = () => {
-    if(subscribeRef.current) {
-      clearTimeout(subscribeRef.current)
-    }
-  }
 
   const subscribe = async () => {
     const eventSource = new EventSource(SUBSCRIBE_URL)
