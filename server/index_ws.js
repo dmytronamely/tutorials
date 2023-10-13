@@ -14,6 +14,7 @@ wss.on('connection', (ws) => {
     ws.id = '7777777'
     switch (message.event) {
       case 'connection':
+        // ws.close(401)
         // TODO Connection Functional
       break;
       case 'message':
