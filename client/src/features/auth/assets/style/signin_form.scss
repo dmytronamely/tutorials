@@ -3,7 +3,7 @@
   grid-template-columns: minmax(200px, 40vw);
 
   input {
-    width: 100%;
+    width: -webkit-fill-available;
     padding: 5px;
     font-size: medium;
   }

@@ -6,6 +6,7 @@ import MainLayout from './layouts/MainLayout';
 import { EventSourcing, LongPolling, WebSock } from './features/chat';
 import NotFoundPage from './pages/NotFoundPage';
 import DashboardLayout from './layouts/DashboardLayout';
+import ChatPage from './pages/ChatPage';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Route index element={ <SigninPage /> } />
         </Route>
         <Route path='/chat' element={ <DashboardLayout /> } >
-          <Route index element = { <LongPolling />} />
+          <Route index element = { <ChatPage />} />
           <Route path='long-polling' element = { <LongPolling />} />
           <Route path='event-sourcing' element = { <EventSourcing />} />
           <Route path='websockets' element = { <WebSock />} />

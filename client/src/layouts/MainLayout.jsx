@@ -1,12 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom'
+import '../assets/style/main.scss'
 
 function MainLayout() {
   return (
     <div className="page">
       <header>
-        <h1>Main Layout</h1>
-        <hr/>
+        <div>
+          Main Layout:
+        </div>
       </header>
       <main>
         <Outlet />

@@ -3,10 +3,14 @@ import { SigninForm } from '../features/auth';
 
 function SigninPage() {
   return (
-    <div>
-      <h1>Sign In Page</h1>
-      <SigninForm />
-    </div>
+    <>
+      <div>
+        Sign In Page
+      </div>
+      <div>
+        <SigninForm />
+      </div>
+    </>
   );
 }
 

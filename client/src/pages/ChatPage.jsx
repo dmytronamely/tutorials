@@ -2,9 +2,10 @@ import React from 'react';
 
 function ChatPage() {
   return (
-    <div>
-        <h1>Dash board</h1>
-    </div>
+    <>
+      <div>Chat Page</div>
+      <div>Chat Content</div>
+    </>
   );
 }
 
