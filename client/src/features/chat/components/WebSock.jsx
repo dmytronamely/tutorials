@@ -3,7 +3,7 @@ import moment from 'moment'
 import { v4 as uuidv4 } from 'uuid'
 import '../assets/style/index.scss'
 
-function WebSock() {
+const WebSock = () => {
   const socket = useRef()
   const inputRef = useRef() 
   const messagesEndRef = useRef() 

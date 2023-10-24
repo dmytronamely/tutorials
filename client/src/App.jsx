@@ -1,12 +1,14 @@
 import './assets/style/app.scss'
-import SigninPage from './pages/SigninPage';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
-import MainLayout from './layouts/MainLayout';
-
-import { EventSourcing, LongPolling, WebSock } from './features/chat';
-import NotFoundPage from './pages/NotFoundPage';
+// Layouts
 import DashboardLayout from './layouts/DashboardLayout';
+import MainLayout from './layouts/MainLayout';
+// Pages
+import SigninPage from './pages/SigninPage';
 import ChatPage from './pages/ChatPage';
+import NotFoundPage from './pages/NotFoundPage';
+// Features
+import { EventSourcing, LongPolling, WebSock } from './features/chat';
 
 const App = () => {
   return (

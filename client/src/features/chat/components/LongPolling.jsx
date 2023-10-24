@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios'
 import '../assets/style/index.scss'
 
-function LongPolling() {
+const LongPolling = () => {
   const inputRef = useRef() 
   const messagesEndRef = useRef() 
   const subscribeRef = useRef(null)

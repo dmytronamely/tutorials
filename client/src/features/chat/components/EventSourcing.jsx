@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios'
 import '../assets/style/index.scss'
 
-function EventSourcing() {
+const  EventSourcing = () => {
   const inputRef = useRef() 
   const messagesEndRef = useRef() 
   const [value, setValue] = useState('')
