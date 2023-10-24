@@ -1,11 +1,11 @@
-.page {
-  nav {
-    display: grid;
-    grid-template-columns: repeat(4, max-content);
-    grid-gap: 10px;
-    justify-content: center;
-    padding: 10px
-  }
+nav.primary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  grid-auto-rows: auto;
+  grid-gap: 10px;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
   a {
     color: blue;
     padding: 10px;
@@ -15,6 +15,26 @@
   }
   a:hover, a.active {
     background: #0a0a65;
+    color: #FFF;
+  }
+}
+
+nav.secondary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  grid-auto-rows: auto;
+  grid-gap: 10px;
+  justify-content: center;
+  padding: 5px;
+  a {
+    color: blue;
+    padding: 5px;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  a:hover, a.active {
+    background: #3a3ace;
     color: #FFF;
   }
 }

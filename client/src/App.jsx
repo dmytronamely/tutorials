@@ -8,7 +8,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import DashboardLayout from './layouts/DashboardLayout';
 import ChatPage from './pages/ChatPage';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -16,11 +16,12 @@ function App() {
           <Route index element={ <SigninPage /> } />
         </Route>
         <Route path='/chat' element={ <DashboardLayout /> } >
-          <Route index element = { <ChatPage />} />
-          <Route path='long-polling' element = { <LongPolling />} />
-          <Route path='event-sourcing' element = { <EventSourcing />} />
-          <Route path='websockets' element = { <WebSock />} />
-          <Route path = '*' element = {<NotFoundPage/> } />
+          <Route path='*' element = {<ChatPage><Outlet /></ChatPage>} >
+            <Route index element = { <LongPolling /> } />
+            <Route path='long-polling' element = { <LongPolling /> } />
+            <Route path='event-sourcing' element = { <EventSourcing /> } />
+            <Route path='websockets' element = { <WebSock /> } />
+          </Route>
         </Route>
         <Route path = '*' element = {<NotFoundPage/> } />
       </Routes>

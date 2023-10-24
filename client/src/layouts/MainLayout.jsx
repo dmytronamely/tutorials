@@ -4,15 +4,11 @@ import '../assets/style/main.scss'
 
 function MainLayout() {
   return (
-    <div className="page">
-      <header>
-        <div>
-          Main Layout:
-        </div>
-      </header>
-      <main>
+    <div className="main">
+      <small>Main layout:</small>
+      <div>
         <Outlet />
-      </main>
+      </div>
     </div>
   );
 }

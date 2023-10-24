@@ -1,16 +1,16 @@
 import React from 'react';
 import { SigninForm } from '../features/auth';
 
-function SigninPage() {
+const SigninPage = () => {
   return (
-    <>
-      <div>
-        Sign In Page
-      </div>
-      <div>
+    <div className='page'>
+      <header>
+        <h1>Sign in</h1>
+      </header>
+      <main>
         <SigninForm />
-      </div>
-    </>
+      </main>
+    </div>
   );
 }
 

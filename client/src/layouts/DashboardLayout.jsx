@@ -1,22 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom'
-import NavBar from '../components/NavBar';
 import '../assets/style/dashboard.scss'
+import NavBar from '../components/NavBar';
 
 function DashboardLayout() {
   return (
-    <div className="page">
-      <header>
-        <div>
-          <p>Dashboard Layout:</p>
-        </div>
-        <div>
-          <NavBar />
-        </div>
-      </header>
-      <main>
+    <div className="dashboard"> 
+      <small>Dashboard layout:</small>     
+      <div>
+        <NavBar />
+      </div>
+      <div>
         <Outlet />
-      </main>
+      </div>
     </div>
   );
 }

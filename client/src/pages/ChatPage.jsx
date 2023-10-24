@@ -1,11 +1,16 @@
 import React from 'react';
+import { NavBar } from '../features/chat';
 
-function ChatPage() {
+const ChatPage = ({ children }) => {
   return (
-    <>
-      <div>Chat Page</div>
-      <div>Chat Content</div>
-    </>
+    <div className='page'>
+      <header>
+        <NavBar />
+      </header>
+      <main>
+        { children }
+      </main>
+    </div>
   );
 }
 

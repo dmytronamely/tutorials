@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../assets/style/signin_form.scss'
+import { Navigate } from 'react-router-dom';
 
 const  SigninForm = () => {
   const userNameRef = useRef(null)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   
   useEffect(() => {
     userNameRef.current?.focus() 
@@ -13,12 +15,14 @@ const  SigninForm = () => {
     console.log(userNameRef.current.value)
     // TODO: signIn()
     userNameRef.current.value = ''
+    setIsLoggedIn(true)
   }
+  if (isLoggedIn) return (<Navigate to="/chat/long-polling" replace />)
 
   return (
     <div className="signin-form">
       <input 
-        placeholder="Your name..." 
+        placeholder="Enter your name and press ENTER ..." 
         type="text"
         ref={userNameRef}
         onKeyUp={onKeyUp}

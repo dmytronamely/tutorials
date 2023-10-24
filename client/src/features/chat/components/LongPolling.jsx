@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import moment from 'moment'
 import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios'
+import '../assets/style/index.scss'
 
 function LongPolling() {
   const inputRef = useRef() 
