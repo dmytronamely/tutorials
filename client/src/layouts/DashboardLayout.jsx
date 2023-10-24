@@ -5,10 +5,14 @@ import NavBar from '../components/NavBar';
 function DashboardLayout() {
   return (
     <div className="page">
-      <h1>Dashboard Layout</h1>
-      <NavBar />
-      <hr/>
-      <Outlet />
+      <header>
+        <h1>Dashboard Layout</h1>
+        <NavBar />
+        <hr/>
+      </header>
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }
