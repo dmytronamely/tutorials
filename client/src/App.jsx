@@ -1,15 +1,29 @@
 import './assets/style/app.scss'
-import EventSourcing from './components/EventSourcing';
-import LongPolling from './components/LongPolling'
-import WebSock from './components/WebSock'
+import SigninPage from './pages/SigninPage';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+
+import { EventSourcing, LongPolling, WebSock } from './features/chat';
+import NotFoundPage from './pages/NotFoundPage';
+import DashboardLayout from './layouts/DashboardLayout';
 
 function App() {
   return (
-    <div className="app">
-      <WebSock />
-      {/* <LongPolling /> */}
-      {/* <EventSourcing  /> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path = '/' element = { <MainLayout />} >
+          <Route index element={ <SigninPage /> } />
+        </Route>
+        <Route path='/chat' element={ <DashboardLayout /> } >
+          <Route index element = { <LongPolling />} />
+          <Route path='long-polling' element = { <LongPolling />} />
+          <Route path='event-sourcing' element = { <EventSourcing />} />
+          <Route path='websockets' element = { <WebSock />} />
+          <Route path = '*' element = {<NotFoundPage/> } />
+        </Route>
+        <Route path = '*' element = {<NotFoundPage/> } />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

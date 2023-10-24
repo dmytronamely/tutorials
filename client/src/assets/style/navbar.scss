@@ -1,0 +1,20 @@
+.page {
+  nav {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 10px;
+  }
+  a {
+    color: blue;
+    padding: 10px;
+    border: 1px solid #b0b0b0;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  a:hover, a.active {
+    background: #0a0a65;
+    color: #FFF;
+  }
+}
