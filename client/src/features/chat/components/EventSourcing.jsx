@@ -7,31 +7,33 @@ import '../assets/style/index.scss'
 const  EventSourcing = () => {
   const inputRef = useRef() 
   const messagesEndRef = useRef() 
+  
   const [value, setValue] = useState('')
   const [messages, setMessages] = useState([])
   const [subscribed, setSubscribed] = useState(false)
   const SUBSCRIBE_URL = 'http://localhost:5002/subscribe'
   const NEW_MEWSSAGES_URL = 'http://localhost:5002/new-messages'
+  const eventSourceRef = useRef(new EventSource(SUBSCRIBE_URL))
 
   useEffect(() => {
     subscribe()
     focus()
+
+    return () => eventSourceRef.current.close()
   }, [])
 
   useEffect(() => { scrollToBottom() }, [messages])
 
   const subscribe = async () => {
-    const eventSource = new EventSource(SUBSCRIBE_URL)
-
-    eventSource.onopen = event => setSubscribed(true)
+    eventSourceRef.current.onopen = event => setSubscribed(true)
     // event.target.readyState 0, 1 (EventSource.OPEN), 2
 
-    eventSource.onmessage = (event) => {
+    eventSourceRef.current.onmessage = (event) => {
       const message = JSON.parse(event.data)
       setMessages(prev => [...prev, message])
     }
 
-    eventSource.onerror = event => setSubscribed(false)
+    eventSourceRef.current.onerror = event => setSubscribed(false)
   }
   
   // INFO: updated every render
