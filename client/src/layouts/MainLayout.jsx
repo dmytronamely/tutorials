@@ -9,7 +9,6 @@ const MainLayout = () => {
         <small>Main layout:</small>
         <hr />
       </header>
-
       <Outlet />
     </div>
   );
