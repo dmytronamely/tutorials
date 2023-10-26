@@ -3,14 +3,14 @@ import { NavBar } from '../features/chat';
 
 const ChatPage = ({ children }) => {
   return (
-    <div className='page'>
-      <header>
+    <main className='page'>
+      <section>
         <NavBar />
-      </header>
-      <main>
-        { children }
-      </main>
-    </div>
+        <article>
+          { children }
+        </article>
+      </section>
+    </main>
   );
 }
 

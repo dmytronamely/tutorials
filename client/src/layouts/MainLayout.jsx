@@ -5,10 +5,12 @@ import '../assets/style/main.scss'
 const MainLayout = () => {
   return (
     <div className="main">
-      <small>Main layout:</small>
-      <div>
-        <Outlet />
-      </div>
+      <header>
+        <small>Main layout:</small>
+        <hr />
+      </header>
+
+      <Outlet />
     </div>
   );
 }

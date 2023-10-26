@@ -5,14 +5,13 @@ import NavBar from '../components/NavBar';
 
 const DashboardLayout = () => {
   return (
-    <div className="dashboard"> 
-      <small>Dashboard layout:</small>     
-      <div>
+    <div className="dashboard">
+      <header>
+        <small>Dashboard layout:</small> 
+        <hr />
         <NavBar />
-      </div>
-      <div>
-        <Outlet />
-      </div>
+      </header> 
+      <Outlet />
     </div>
   );
 }

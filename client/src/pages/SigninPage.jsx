@@ -3,14 +3,15 @@ import { SigninForm } from '../features/auth';
 
 const SigninPage = () => {
   return (
-    <div className='page'>
-      <header>
+    <main className='page'>
+      <section>
         <h1>Sign in</h1>
-      </header>
-      <main>
-        <SigninForm />
-      </main>
-    </div>
+        <article>
+          <p>Enter your username for chatting...</p>
+          <SigninForm />
+        </article>
+      </section>
+    </main>
   );
 }
 
