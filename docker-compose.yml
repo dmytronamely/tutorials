@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  client:
+    build: ./client
+    ports: 
+      - 3000:3000
+    depends_on:
+      - lp-server
+      - es-server
+      - ws-server      
+  lp-server:
+    build: ./server
+    ports:
+      - 5001:5001  
+    command: node index_lp.js
+  es-server:
+    build: ./server
+    ports:
+      - 5002:5002
+    command: node index_es.js
+  ws-server:
+    build: ./server
+    ports:
+      - 5003:5003
+    command: node index_ws.js     

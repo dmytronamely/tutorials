@@ -6,7 +6,7 @@ const MainLayout = () => {
   return (
     <div className="main">
       <header>
-        <small>Main layout:</small>
+        <small>Main layout: I'm new build</small>
         <hr />
       </header>
       <Outlet />

@@ -9,3 +9,14 @@
 ##### _Docs:_
 - _[Client](./client/Readme.md)_
 - _[Server](./server/Readme.md)_
+
+
+#### Docker Compose
+##### RUN 
+```bash
+  docker-compose up --remove-orphans
+```
+#####  R-Build and Run
+```bash
+  docker-compose up --remove-orphans --build
+```

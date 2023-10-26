@@ -13,18 +13,21 @@ const  EventSourcing = () => {
   const [subscribed, setSubscribed] = useState(false)
   const SUBSCRIBE_URL = 'http://localhost:5002/subscribe'
   const NEW_MEWSSAGES_URL = 'http://localhost:5002/new-messages'
-  const eventSourceRef = useRef(new EventSource(SUBSCRIBE_URL))
+  const eventSourceRef = useRef(null)
 
   useEffect(() => {
     subscribe()
     focus()
 
-    return () => eventSourceRef.current.close()
+    return () => { 
+      eventSourceRef.current.close()
+    }
   }, [])
 
   useEffect(() => { scrollToBottom() }, [messages])
 
   const subscribe = async () => {
+    eventSourceRef.current = new EventSource(SUBSCRIBE_URL)
     eventSourceRef.current.onopen = event => setSubscribed(true)
     // event.target.readyState 0, 1 (EventSource.OPEN), 2
 
