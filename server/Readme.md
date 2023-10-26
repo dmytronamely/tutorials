@@ -35,7 +35,7 @@ docker run --rm  -d --name rt-server-ws -p 5003:5003 realtime/server npm run ws
 
 ##### Kill
 ```bash
-docker kill rt-client
+docker kill rt-server-lp rt-server-es rt-server-ws
 ```
 
 ##### List of Docker Images
